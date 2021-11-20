@@ -23,14 +23,14 @@ exam_one = int(input("Input exam grade one: "))
 
 exam_two = int(input("Input exam grade two: "))
 
-exam_3 = int(input("Input exam grade three: "))
+exam_three = int(input("Input exam grade three: "))
 
 grades = [exam_one,exam_two,exam_three]
 Sum = 0
 for grade in grade:
   Sum = Sum + grade
 
-avg = Sum / len(grdes)
+avg = Sum / len(grades)
 
 if avg >= 90:
     letter_grade = "A"
@@ -50,7 +50,7 @@ for grade in grades:
 
     print("Grade: " + letter_grade)
 
-if letter-grade == "F":
+if letter_grade == "F":
     print ("Student is failing.")
 else:
     print ("Student is passing.")
