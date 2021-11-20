@@ -6,6 +6,7 @@ def compare_numbers(number, user_guess):
     cow=0
     bull=0
     cowbull=list()
+    count=0
     return cowbull
 
 playing = True #gotta play the game
