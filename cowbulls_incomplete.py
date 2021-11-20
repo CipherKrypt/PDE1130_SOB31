@@ -1,7 +1,7 @@
 import random
 
 def compare_numbers(number, user_guess):
-    ## your code here
+    
     return cowbull
 
 playing = True #gotta play the game
