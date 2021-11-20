@@ -3,7 +3,9 @@ import random
 def compare_numbers(number, user_guess):
     number=list(str(number))
     user_guess=str(user_guess)
-    
+    cow=0
+    bull=0
+    cowbull=list()
     return cowbull
 
 playing = True #gotta play the game
