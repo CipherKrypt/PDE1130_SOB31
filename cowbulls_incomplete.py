@@ -5,7 +5,7 @@ def compare_numbers(number, user_guess):
     return cowbull
 
 playing = True #gotta play the game
-number = str(random.randint(0,9999)) #random 4 digit number
+number = str(random.randint(1000,9999)) #random 4 digit number
 guesses = 0
 print number
 
