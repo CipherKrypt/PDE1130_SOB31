@@ -6,17 +6,14 @@ def compare_numbers(number, user_guess):
     cow=0
     bull=0
     cowbull=list()
-    for i in range(len(user_guess)):
-        print(number)
-        print(user_guess[i])
-        if user_guess[i] in number:
-            if user_guess[i]==number[i]:
-                print(user_guess[i],'=',number[0])
-                bull+=1
-            else:
-                print(user_guess[i],'in number')
+    for i in user_guess:
+        if i==number[0]:
+            bull+=0
+        else:
+            if i in number:
                 cow+=1
-    cowbull.extend([cow,bull])
+        number.pop(i)
+    cowbull.extend([bull,cow])
             
     return cowbull
 
@@ -24,7 +21,7 @@ playing = True #gotta play the game
 number = str(random.randint(1000,9999)) #random 4 digit number
 guesses = 0
 
-print(number)
+
 print("Let's play a game of Cowbull!") #explanation
 print("I will generate a number, and you have to guess the numbers one digit at a time.")
 print("For every number that exists in the sequence but is in wrong place, you get a cow. For every one in the right place, you get a bull.")
@@ -33,17 +30,13 @@ print("Type exit at any prompt to exit.")
 
 while playing:
     user_guess = input("Give me your best guess!")
-    if user_guess =='show':
-        print(number)
-        continue
-        
     if user_guess == "exit":
         break
     cowbullcount = compare_numbers(number,user_guess)
     guesses+=1
 
     print("You have "+ str(cowbullcount[0]) + " cows, and " + str(cowbullcount[1]) + " bulls.")
-    print()
+
     if cowbullcount[1]==4:
         playing = False
         print("You win the game after " + str(guesses) + "! The number was "+str(number))
