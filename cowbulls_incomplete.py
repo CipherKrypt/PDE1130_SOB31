@@ -6,21 +6,28 @@ def compare_numbers(number, user_guess):
     cow=0
     bull=0
     cowbull=list()
-    for i in user_guess:
-        if i==number[0]:
-            bull+=0
-        else:
-            if i in number:
+    for i in range(len(user_guess)):
+        if user_guess[i] in number:
+            if user_guess[i]==number[i]:
+                bull+=1
+            else:
                 cow+=1
-        number.pop(i)
-    cowbull.extend([bull,cow])
+    cowbull.extend([cow,bull])
             
     return cowbull
 
+def repeat(num):
+    for i in num:
+        repeat=0
+        for j in num:
+            if i==j:
+                repeat+=1
+            return True
+    return False
+                
 playing = True #gotta play the game
 number = str(random.randint(1000,9999)) #random 4 digit number
 guesses = 0
-
 
 print("Let's play a game of Cowbull!") #explanation
 print("I will generate a number, and you have to guess the numbers one digit at a time.")
@@ -29,14 +36,29 @@ print("The game ends when you get 4 bulls!")
 print("Type exit at any prompt to exit.")
 
 while playing:
-    user_guess = input("Give me your best guess!")
-    if user_guess == "exit":
-        break
-    cowbullcount = compare_numbers(number,user_guess)
-    guesses+=1
+    while True:
+        user_guess = input("Give me your best guess!: ")
+            
+        if user_guess == "exit":
+            break
+        else:
+            if len(user_guess)==4:
+                if repeat(user_guess):
+                    print('Do not enter repeating numbers')
+                    print()
+                    continue
+                else:
+                    cowbullcount = compare_numbers(number,user_guess)
+                    guesses+=1
+                    break
+            else:
+                print('Your guess should be only 4 digit long.')
+                print()
+                continue           
+    break
 
     print("You have "+ str(cowbullcount[0]) + " cows, and " + str(cowbullcount[1]) + " bulls.")
-
+    print()
     if cowbullcount[1]==4:
         playing = False
         print("You win the game after " + str(guesses) + "! The number was "+str(number))
