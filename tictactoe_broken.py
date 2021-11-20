@@ -101,7 +101,7 @@ if __name__ == '__main__':
         while not available:
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
-            available = check_space_empty(game, row)
+            available = check_space_empty(game, row, column)
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
