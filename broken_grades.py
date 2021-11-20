@@ -34,13 +34,13 @@ avg = Sum / len(grdes)
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90
+elif avg >= 80 and avg < 90:
     letter_grade = "B"
 elif avg > 69 and avg < 80:
-    letter_grade = 'C' #changed double quote to single
+    letter_grade = "C" 
 elif avg <= 69 and avg >= 65:
     letter_grade = "D"
-elif:
+else:
     letter_grade = "F"
 
 for grade in grades:
@@ -51,6 +51,6 @@ for grade in grades:
     print("Grade: " + letter_grade)
 
 if letter-grade is "F":
-    print "Student is failing."
+    print ("Student is failing.")
 else:
-    print "Student is passing."
+    print ("Student is passing.")
