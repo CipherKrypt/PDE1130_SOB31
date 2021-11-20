@@ -67,7 +67,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player
     return game
 
 def check_space_empty(game, row, column):
@@ -105,5 +105,5 @@ if __name__ == '__main__':
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
-#        winner = check_winner(game)
+        winner = check_winner(game)
     display_winner(winner)
