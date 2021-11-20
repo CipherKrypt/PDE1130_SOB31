@@ -1,6 +1,8 @@
 import random
 
 def compare_numbers(number, user_guess):
+    number=list(str(number))
+    user_guess=str(user_guess)
     
     return cowbull
 
