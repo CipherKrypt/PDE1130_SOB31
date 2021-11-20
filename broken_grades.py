@@ -50,7 +50,7 @@ for grade in grades:
 
     print("Grade: " + letter_grade)
 
-if letter-grade is "F":
+if letter-grade == "F":
     print ("Student is failing.")
 else:
     print ("Student is passing.")
