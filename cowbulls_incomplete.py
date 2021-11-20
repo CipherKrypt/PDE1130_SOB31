@@ -6,7 +6,15 @@ def compare_numbers(number, user_guess):
     cow=0
     bull=0
     cowbull=list()
-    count=0
+    for i in user_guess:
+        if i==number[0]:
+            bull+=0
+        else:
+            if i in number:
+                cow+=1
+        number.pop(i)
+    cowbull.extend([bull,cow])
+            
     return cowbull
 
 playing = True #gotta play the game
